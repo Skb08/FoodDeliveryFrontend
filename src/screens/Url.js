@@ -1,0 +1,1 @@
+export const  BASE_URL = "https://fooddelivery-kov3.onrender.com"
