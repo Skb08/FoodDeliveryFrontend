@@ -1,7 +1,7 @@
 import React from 'react'
 // import Delete from '@material-ui/icons/Delete'
 import { useCart, useDispatchCart } from '../components/ContextReducer';
-// import trash from "../trash.svg";
+import { MdDelete } from "react-icons/md"
 import { BASE_URL } from './Url';
 
 export default function Cart() {
@@ -14,7 +14,7 @@ export default function Cart() {
             </div>
         )
     }
-    console.log(BASE_URL+"skb");
+    console.log(BASE_URL + "skb");
     // const handleRemove = (index)=>{
     //   console.log(index)
     //   dispatch({type:"REMOVE",index:index})
@@ -22,9 +22,9 @@ export default function Cart() {
 
     const handleCheckOut = async () => {
         let userEmail = localStorage.getItem("userEmail");
-        
+
         // let response = await fetch(`http://localhost:5000/api/orderData`, {
-            let response = await fetch(`${BASE_URL}/api/orderData`, {
+        let response = await fetch(`${BASE_URL}/api/orderData`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +66,11 @@ export default function Cart() {
                                 <td>{food.qty}</td>
                                 <td>{food.size}</td>
                                 <td>{food.price}</td>
-                                <td><button type='button' className='btn p-0'><img src="" alt='delet' onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button></td>
+                                <td>
+                                    <button type='button' className='btn p-0'>
+                                        <MdDelete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} />
+                                    </button>
+                                </td>
                                 {/* <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td> */}
                             </tr>
                         ))}
