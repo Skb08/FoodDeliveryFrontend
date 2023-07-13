@@ -33,7 +33,7 @@ export default function () {
         <div>
             <div><Navbar /></div>
             <div>
-                <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{marginTop:"4rem", objectFit: 'fill !important' }}>
+                <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{objectFit: 'fill !important' }}>
                 <div className="carousel-inner" id='carousel'>
                     <div className='carousel-caption' style={{ zIndex: '10' }}>
                         <div className="d-flex justify-content-center">
