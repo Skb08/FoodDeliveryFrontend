@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-import Navbar2 from '../components/Navbar2';
 import { BASE_URL } from './Url';
 
 export default function Login() {
@@ -37,8 +36,7 @@ export default function Login() {
   }
   return (
     <>
-    <Navbar2/>
-      <div className='container d-flex justify-content-center align-items-center' style={{marginTop:"6%",height:"89vh"}}>
+      <div className='container d-flex justify-content-center align-items-center' style={{height:"90vh"}}>
         
         <form className='card p-4  rounded' onSubmit={handleSubmit} style={{height:"450px",width:"370px"}}>
           <h4 className='mb-4 text-center font-weight-bold'>Login Form</h4>

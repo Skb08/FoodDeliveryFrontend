@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-import Navbar2 from '../components/Navbar2';
 import { BASE_URL } from './Url';
 
 export default function Signup(props) {
     let navigate = useNavigate();
-    const [credentials, setCredentials] = useState({name: 'test',email: "",password: "",geolocation: "" });
+    const [credentials, setCredentials] = useState({name: '',email: "",password: "",geolocation: "" });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,8 +32,7 @@ export default function Signup(props) {
     }
     return (
         <>
-            <Navbar2/>
-            <div className='container d-flex justify-content-center align-items-center' style={{marginTop:"15%",height:"100vh"}}>
+            <div className='container d-flex justify-content-center align-items-center' style={{height:"98vh"}}>
                 <form className='card p-4  rounded' style={{height:"590px",width:"410px"}} onSubmit={handleSubmit}>
                     <h4 className='mb-3 text-center font-weight-bold'>SignUp Form</h4>
                     <div className="mb-3">
