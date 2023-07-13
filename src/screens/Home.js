@@ -33,16 +33,15 @@ export default function () {
         <div>
             <div><Navbar /></div>
             <div>
-                <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{ objectFit: 'contain !important' }}>
+                <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{marginTop:"4rem", objectFit: 'fill !important' }}>
                 <div className="carousel-inner" id='carousel'>
                     <div className='carousel-caption' style={{ zIndex: '10' }}>
                         <div className="d-flex justify-content-center">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=>{setSearch(e.target.value)}} />
-                            {/* <button className="btn btn-outline-success text-white bg-success" type="submit">Search</button> */}
                         </div>
                     </div>
-                    <div className="carousel-item active">
-                        <img src="https://source.unsplash.com/random/900x700/?pizza" className="d-block w-100" style={{ filter: 'brightness(30%' }} alt="..." />
+                    <div className="carousel-item active" style={{objectFit: 'cover !important',innerHeight:"45rem" }}>
+                        <img src="https://source.unsplash.com/random/500x900/?pizza" className="d-block w-100 " style={{ filter: 'brightness(30%)'}} alt="..." />
                     </div>
                     <div className="carousel-item">
                         <img src="https://source.unsplash.com/random/900x700/?pasta" className="d-block w-100" style={{ filter: 'brightness(30%' }} alt="..." />
@@ -61,7 +60,7 @@ export default function () {
                 </button>
             </div>
             </div>
-            <div className='container'>
+            <div className='container p-4'>
                 {
                     foodCat !== []
                         ? foodCat.map((data) => {
@@ -73,7 +72,7 @@ export default function () {
                                         ? foodItem.filter((item) => item.CategoryName === data.CategoryName && item.name.toLowerCase().includes(search.toLowerCase()))
                                             .map(filterItems => {
                                                 return (
-                                                    <div key={filterItems._id} className='col-12 col-md-6 col-lg-3'>
+                                                    <div key={filterItems._id} className='d-flex justify-content-center col-12 col-md-6 col-lg-4'>
                                                         <Card foodItem ={filterItems}
                                                             options = {filterItems.options}
                                                         ></Card>
